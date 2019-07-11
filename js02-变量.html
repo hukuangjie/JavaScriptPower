@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //交换两个变量的值
+
+        var n1 = 50;
+        var n2 = 60;
+
+        // var tmp =n1;
+        // n1 = n2;
+        // n2 =tmp;
+
+        // console.log(n1);
+        // console.log(n2);
+
+        //交换两个变量的值（不使用tmp）
+
+        // n1 = n1 + n2;
+        // n2 = n1 - n2;
+        // n1 = n1 - n2;
+
+        // console.log("n1="+n1)
+        // console.log("n2="+n2)
+
+        // var age = 80;
+
+        // age = "马飞";
+
+        // console.log(typeof age) //查看数据类型
+
+        var num1 = 0.1;
+        var num2 = 0.2;
+        var num3 = 0.3;
+        console.log(num1+num2)
+        console.log(num1+num3)
+        console.log(num1+num3 == 0.4)
+
+        console.log();
+
+        console.log(parseInt("abc"));//NaN
+        console.log(parseInt("abc"/10));//NaN
+
+        var num = prompt("请输入一个数字")
+        if(isNaN(num)){
+            console.log("不是一个数字");
+        }else{
+            console.log("是一个数字");
+            
+        }
+
+        console.log("\"Ancona\"");
+        
+        //字符串的不可变
+        var str ="hello";
+        str = str+"world";
+        console.log(str);
+        
+        var a ='100';
+        var b=100;
+        console.log(a+b); //100100
+        console.log(a-b); //0
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
