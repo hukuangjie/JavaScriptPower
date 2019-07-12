@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-    
+
         //1+2+3+4+ ... +100;
         // let sum =0;
         // for (let index = 1; index <= 100; index++) {
@@ -16,21 +17,42 @@
 
         //打印99乘法表
         document.write("<table border='1px' cellpadding='0' cellspacing='0'>");
-            for (let i = 1; i < 9; i++) {
-                //外循环 控制行
-                document.write("<tr>");
-                    for (let j = 0; j <= i; j++) {
-                        document.write("<td>");
-                            document.write(i+"*"+j +"="+i*j);
-                        document.write("</td>");
-                        
-                    }
-                document.write("</tr>");
+        for (let i = 1; i < 9; i++) {
+            //外循环 控制行
+            document.write("<tr>");
+            for (let j = 0; j <= i; j++) {
+                document.write("<td>");
+                document.write(i + "*" + j + "=" + i * j);
+                document.write("</td>");
+
             }
-            document.write("</table>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+
+        //求200-300之间的所有的偶数的和，用continue实现
+        var sum = 0;
+        for (let i = 200; i < 301; i++) {
+            if (i % 2 === 0) {
+                continue;
+            }
+            sum += i;
+        }
+        console.log(sum);
+
+        //求200-300之间第一个能被7整除的数
+        for (let index = 200; index < 301; index++) {
+            if (index % 7 === 0) {
+                console.log(index);
+                break;
+            }
+        }
     </script>
 </head>
+
 <body>
     <p></p>
 </body>
+
 </html>
