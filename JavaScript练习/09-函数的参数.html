@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function getSum(a, b) {
+            a = 100;
+            return a + b;
+        }
+        var a = 10;
+        var b = 30;
+        getSum(a, b); //当掉褪色getSum的时候，会把实参的a和b 赋值一份传递给getSum函数。
+        console.log(getSum(a, b));
+
+        console.log(a);
+
+        //在JavaScript 中实参的个数可以和形参的个数不一致
+        function getSum(a, b, c) {
+            a = a || 0;
+            b = b || 0;
+            c = c || 0;
+            return a + b;
+        }
+        var sum = getSum(1, 2);
+        console.log(sum);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

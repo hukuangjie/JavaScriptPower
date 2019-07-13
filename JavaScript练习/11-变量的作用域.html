@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 变量的作用域：变量在什么位置可以使用
+
+        // 全局作用域：在任何位置都可以访问
+        var name ="a"; //全局变量
+        function f1(){
+            console.log(name);
+        }
+        f1();
+        
+        //局部作用域：在函数内部声明一个变量，只能在函数内部使用
+        function f1(){
+            var name ="aaa";//局部变量
+            console.log(name);
+        }
+        f1();
+        console.log(name);//无法访问f1函数中的name="aaa";
+
+        //当变量超出作用域之后，变量会被销毁。
+
+        //能不用全局变量就不用全局变量，好处是一直不被释放，坏处是一直占用内存。
+
+        // 判断是否是全局变量，可以在函数内部输出一下，在函数外部输出一下。
+
+        // 不使用 var 定义的变量是全局变量
+
+        // JavaScript中没有块级作用域
+        // 块级作用域
+        {
+            //代码块
+            //在其他语言中，在代码块中定义的变量，外部似乎访问不到的
+            //但是JavaScript中没有块级作用域
+            var name ="abc";
+            console.log(name); //abc
+        }
+        console.log(name); //abc
+
+        // JavaScript一般在if判断语句和for循环中会使用到块级作用域。
+        // 变量在退出作用域之后会销毁，全局变量在关闭网页或者浏览器才会销毁
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

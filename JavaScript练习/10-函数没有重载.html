@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //在其他语言中，有重载的概念
+        //重载，函数名字相同，但是参数个数不同
+        //JavaScript中没有重载的概念。
+        //下面的相同名称的函数会把上面的函数覆盖
+        //在JavaScript中不允许出现同名的函数
+        function f1(a, b) {
+            return a + b;
+        }
+        function f1(a, b, c) {
+            return a + b + c;
+        }
+        console.log(f1(1, 2)); //报错 NaN。就近原则，没有重载。
+
+        //不弹框，alert方法会覆盖掉系统自带alert();
+        function alert(a) {
+            console.log(a);
+        }
+        alert("abc");
+
+
+        // 定义函数的两种方式
+        //问题： 为什么先调用，再声明也可以使用?
+        // 答:预解析，function被提前了。
+        // 1 函数声明
+        console.log(fnName(1,2));
+        function fnName(a,b){
+            return a+b;
+        }
+
+
+        // 2 函数表达式
+        var a =5;
+        //Uncaught TypeError: fnName is not a function
+        // 问题：为什么出错？
+        // 答： fnName被提前声明。然后fnName(1,2)调用了一个空的函数。
+        console.log(fnName(1,2));
+        var fnName =function (a,b){
+            return a+b;
+        }
+
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
