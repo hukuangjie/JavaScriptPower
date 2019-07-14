@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //创建对象
+
+        // 构造函数的命名：第一个字母要大写
+        // 1 内存中开辟空间，创建了一个对象 这个对象没有定义的属性和方法。
+        // 2 返回公共创建的对象
+        // new Object();
+
+        // 函数和方法的区别
+        // 函数 直接调用的是函数 ： alert();
+        // 通过对象调用的是方法 :  对象.方法()
+
+        var hero = new Object();
+        //属性--特征
+        hero.name = "xiaoming";
+        hero.level = 0; //等级
+        hero.diamond = 0; //钻石
+        //方法--行为 动词
+        hero.moveLeft = function () {
+            console.log("left");
+        };
+        hero.attack = function (name) {//name 怪兽的名字
+            //只有在当前hero对象的方法中，this才是当前hero对象
+            //this 当前这个对象
+            console.log(this.name + "攻击" + name);
+        };
+        // 获取对象的属性值
+        console.log(hero.name);
+        console.log(hero.level);
+        // 调用方法 攻击对象hkj
+        hero.attack("hkj");
+
+
+        //一个学生对象
+
+        var student = new Object();
+        // 对象的属性
+        student.name = "hkj";
+        student.age = 19;
+        student.sex = 1;
+        student.score = 100;
+
+        // 对象的方法
+        student.sayHi = function () {
+            console.log("大家好，我是" + this.name);
+        }
+
+        function creatStudent(name, age, sex, score) {
+            // 通过构造函数，创建对象
+            var student = new Object();
+            // 对象的属性
+            student.name = name;
+            student.age = age;
+            student.sex = sex;
+            student.score = score;
+            // 对象的方法
+            student.sayHi = function () {
+                console.log("大家好，我是" + this.name);
+            }
+            // 返回对象
+            return student;
+        }
+
+        var s1 = creatStudent("zhangsan", 18, "男", 90);
+        var s1 = creatStudent("lisi", 11, "男", 100);
+
+        var o = new Object();
+        console.log(typeof o); //Object
+        console.log(o); //object{}
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
