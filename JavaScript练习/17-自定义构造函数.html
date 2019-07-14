@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //自定义构造函数 --- 构造函数：构造一个对象，并且返回的函数
+        //调用构造函数 new Object();
+        
+            function Student(name, age, sex, score) {
+                this.name = name;
+                this.age = age;
+                this.sex = sex;
+                this.score = score;
+                //对象的方法
+                this.sayHi = function () {
+                    console.log("大家好，我是" + this.name);
+                }
+            }
+            
+            // 1 内存开辟空间，存储新创建的对象
+            // 2 会把this设置为当前对象
+            // 执行函数内部的代码，设置对象的属性和方法
+            // 4 返回新创建的对象
+            var s1 = new Student("zs", 19, 1, 100);
+            s1.sayHi();
+
+            console.log(s1.name);
+            console.log(s1["name"]);
+
+            // 对象：无序属性的集合，我可以把对象看成键值对。
+            var o =new Object();
+            o["name"] = "zs";
+            console.log(o.name);
+            
+            for (let i = 0;  i < 10;i++) {
+                // 动态给对象增加属性
+                o["n"+i] = i;
+            }
+
+            function test(){
+                // 此时this是window，因为是window调用的此函数。
+                console.log(this);
+            }
+            test();
+            window.test();// 一样的效果
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
